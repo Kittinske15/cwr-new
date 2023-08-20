@@ -4,9 +4,6 @@
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.4",
-    "@material-ui/icons": "^4.11.2",
-    "@mui/icons-material": "^5.11.16",
-    "@mui/material": "^5.11.16",
     "@svg-maps/china": "^1.0.1",
     "@svg-maps/thailand": "^1.0.1",
     "@svg-maps/world": "^1.0.1",

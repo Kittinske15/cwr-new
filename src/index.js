@@ -8,7 +8,6 @@ import Test from './test';
 import China from './pages/China';
 import Thailand from './pages/Thailand';
 import India from './pages/India';
-import TrueVision from './pages/TrueVision';
 import CoporateStock from './pages/CoporateStock';
 import './styles/main.scss'
 
@@ -17,7 +16,6 @@ root.render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/true-vision" element={<TrueVision />} />
       <Route path="/test" element={<Test />} />
       <Route path="/China" element={<China />} />
       <Route path="/Thailand" element={<Thailand />} />
