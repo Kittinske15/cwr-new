@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@emotion/react": "^11.10.4",
     "@svg-maps/china": "^1.0.1",
     "@svg-maps/thailand": "^1.0.1",
     "@svg-maps/world": "^1.0.1",
@@ -25,7 +24,6 @@
     "react-apexcharts": "^1.4.0",
     "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.2.0",
-    "react-gauge-chart": "0.2.5",
     "react-router-dom": "^6.13.0",
     "react-scripts": "5.0.1",
     "react-svg-map": "^2.2.0",
