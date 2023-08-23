@@ -72,6 +72,9 @@ export default function CoporateStock() {
             <div className='thailand-body'>
                 <div className='thailand-box'>
                     {CoporateStock}
+                    <div className='reference'>
+                        * Reference: Yahoo Financial data API
+                    </div>
                 </div>
                 <div className='thailand-box-content'>
                     {Oversea}

@@ -202,6 +202,7 @@ export default function Home() {
           <p className="map-header">GDP growth </p>
           <hr />
           <svg className="map" ref={svgRef}></svg>
+          <div className="reference">* Reference: International Monetary Fund</div>
         </div>
 
         <div className="list">

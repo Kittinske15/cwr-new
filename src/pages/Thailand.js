@@ -381,6 +381,7 @@ export default function Thailand() {
       <div className='thailand-body'>
         <div className='thailand-box'>
           <svg className="map" ref={svgRef}></svg>
+          <div className="reference">* Reference: สำนักงานคณะกรรมการพัฒนาการเศรษฐกิจและสังคมแห่งชาติ สำนักนายกรัฐมนตรี</div>
         </div>
         {isMobile ? (
           <div className='trading-view-box'>
