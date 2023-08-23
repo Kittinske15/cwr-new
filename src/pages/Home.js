@@ -7,6 +7,11 @@ import { feature } from 'topojson';
 import { colorLegend } from "../components/colorLegend";
 import { colorData, colorScale, numberScale } from "../components/color";
 import data from "../gdp.json";
+import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
+import { styled } from '@mui/material/styles';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import { useState } from "react";
 
 
@@ -14,6 +19,43 @@ export default function Home() {
   const countries_data = data.map((item) => item["Country/Territory"]);
   const estimateGDP = data.map((item) => item["Estimate"]);
   const getColor = (num) => colorData(num);
+
+  const ListButton = styled(Button)({
+    boxShadow: 'none',
+    textTransform: 'none',
+    fontSize: 16,
+    padding: '6px 12px',
+    border: '1px solid',
+    lineHeight: 1.5,
+    borderColor: '#d9d9d9',
+    color: '#ffffff',
+    fontFamily: [
+      '-apple-system',
+      'BlinkMacSystemFont',
+      '"Segoe UI"',
+      'Roboto',
+      '"Helvetica Neue"',
+      'Arial',
+      'sans-serif',
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(','),
+    '&:hover': {
+      color: '#000000',
+      backgroundColor: '#eeee',
+      borderColor: '#ffffff',
+      boxShadow: 'none',
+    },
+    '&:active': {
+      boxShadow: 'none',
+      backgroundColor: '#0062cc',
+      borderColor: '#ffffff',
+    },
+    '&:focus': {
+      boxShadow: '0 0 0 0.2rem rgba(0,123,255,.5)',
+    },
+  });
 
   const [sortCountry, setSortCountry] = useState(true);
 
@@ -165,20 +207,22 @@ export default function Home() {
         <div className="list">
           <p className="list-header">List ( 2023 ) </p>
           <hr />
-          <div>
-            DTGO
-          </div>
-          <div>
-            Country
-          </div>
+          <Stack direction="row" gap={2} className="list-button">
+            <ListButton variant="outline" disableRipple>
+              CP
+            </ListButton>
+            <ListButton variant="outline" disableRipple>
+              Country
+            </ListButton>
+          </Stack>
           <div className="list-container">
-            {/* <div endIcon={sortCountry ? <KeyboardArrowDownIcon /> : <KeyboardArrowUpIcon />}
+            <Button endIcon={sortCountry ? <KeyboardArrowDownIcon /> : <KeyboardArrowUpIcon />}
               onClick={() => { setSortCountry(!sortCountry); }}
               size="large"
               style={{ color: 'white' }}
             >
               Country
-            </div> */}
+            </Button>
             <p> Value </p>
           </div>
           <div className="country-list-scroll">

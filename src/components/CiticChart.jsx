@@ -4,11 +4,11 @@ import io from 'socket.io-client';
 import { format, fromUnixTime } from 'date-fns';
 import { utcToZonedTime } from 'date-fns-tz';
 
-export default function CPFChart() {
+export default function CiticChart() {
     useEffect(() => {
         const chartContainer = document.getElementById('tvchart');
         const containerWidth = chartContainer.clientWidth;
-        const containerHeight = 300;
+        const containerHeight = 200;
 
         const chartProperties = {
             width: containerWidth,
@@ -20,11 +20,11 @@ export default function CPFChart() {
         };
         const log = console.log;
 
-        const chart = createChart(document.getElementById('tvchart'), chartProperties);
+        const chart = createChart(document.getElementById('citic-chart'), chartProperties);
         const candleSeries = chart.addCandlestickSeries();
 
         function fetchDataAndGenerateChart() {
-            fetch('https://www.ibsdo.com/api/CPF.BK')
+            fetch('https://www.ibsdo.com/api/0267.HK')
                 .then((res) => res.json())
                 .then((data) => {
                     const cdata = data.map((d) => ({
@@ -54,6 +54,6 @@ export default function CPFChart() {
     }, []); // Empty dependency array ensures this runs once on component mount
 
     return (
-        <div id="tvchart" style={{ width: '100%', height: '100%' }}></div>
+        <div id="citic-chart" style={{ width: '100%', height: '100%' }}></div>
     );
 }

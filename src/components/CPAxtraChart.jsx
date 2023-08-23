@@ -4,7 +4,7 @@ import io from 'socket.io-client';
 import { format, fromUnixTime } from 'date-fns';
 import { utcToZonedTime } from 'date-fns-tz';
 
-export default function TrueChart() {
+export default function CPAxtraChart() {
   useEffect(() => {
     const chartContainer = document.getElementById('tvchart');
     const containerWidth = chartContainer.clientWidth;
@@ -20,11 +20,11 @@ export default function TrueChart() {
     };
     const log = console.log;
 
-    const chart = createChart(document.getElementById('truechart'), chartProperties);
+    const chart = createChart(document.getElementById('cpaxt-chart'), chartProperties);
     const candleSeries = chart.addCandlestickSeries();
 
     function fetchDataAndGenerateChart() {
-      fetch('https://www.ibsdo.com/api/TRUE.BK')
+      fetch('https://www.ibsdo.com/api/CPAXT.BK')
         .then((res) => res.json())
         .then((data) => {
           const cdata = data.map((d) => ({
@@ -54,6 +54,6 @@ export default function TrueChart() {
   }, []); // Empty dependency array ensures this runs once on component mount
 
   return (
-    <div id="truechart" style={{ width: '100%', height: '100%' }}></div>
+    <div id="cpaxt-chart" style={{ width: '100%', height: '100%' }}></div>
   );
 }
